@@ -1,5 +1,5 @@
 class Button {
-		constructor(VAR, X, Y, MIN, MAX, START, LENGTH, COLOR, THICKNESS, RADIUS) {
+		constructor(VAR, X, Y, MIN, MAX, START, LENGTH, COLOR, THICKNESS, RADIUS, EVENT) {
 			let sibs = Buttons.instances.length +1;
 			if (X === undefined) 
 			X = width /2;
@@ -32,6 +32,7 @@ class Button {
 			this.radius = RADIUS;
 			this.slideX = X +(START -(MIN +MAX)/2) *LENGTH /(-MIN +MAX);
 			this.held = false;	//Wether mouse is currently pressing/dragging this object
+			this.event = EVENT;
 		}
 		collision() {
 			const deltaX = -mouseX +this.slideX;
@@ -80,6 +81,7 @@ var Buttons = {
 				}
 			}
 			window[obj1.var] = obj1.val;
+			obj1.event();
 		}
 	}, 
 	//Call from P5.touchEnded()
