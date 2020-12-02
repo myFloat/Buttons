@@ -12,9 +12,9 @@ class Button {
 			if (COLOR === undefined)
 			COLOR = color(255 /sibs, 127 /sibs, 255 -255 /sibs);
 			if (THICKNESS === undefined) 
-			T = 4;
+			THICKNESS = 4;
 			if (RADIUS === undefined) 
-			R = max(18, height /30);
+			RADIUS = max(18, height /30);
 			if (MIN === undefined || MAX === undefined) {
 				MIN = -L/2;
 				MAX = L/2;
