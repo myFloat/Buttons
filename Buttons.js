@@ -100,6 +100,7 @@ var Buttons = {
 	}, 
 	//Call every draw tick
 	drawAll() {
+		ellipseMode(RADIUS);
 		if (Buttons.renderButtons) {
 			for(const obj1 of Buttons.instances) {
 				obj1.draw();
